@@ -1,5 +1,5 @@
 ## IMPORTANT
-- <mark>Go to settings and configure pages, deploy from the branch, and then select the root folder. IF YOU DO NOT DO THIS YOUR PAGE WILL NOT BUILD.</mark>  
+- Go to settings and configure pages, deploy from the branch, and then select the root folder. IF YOU DO NOT DO THIS YOUR PAGE WILL NOT BUILD.  
 
 ## Blog site using GitHub Pages and Jekyll
 > This site is intended for Students.   This is to record plans, complete hacks, and do work for your learnings.
