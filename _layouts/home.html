@@ -1,5 +1,5 @@
 ---
-layout: base 
+layout: base
 ---
 
 <div class="home">
@@ -53,7 +53,8 @@ layout: base
         {%- if site.show_image -%}
             {%- include post_list_image_card.html -%}
         {% else %}
-            {%- include post_list.html -%}
+            <!-- {%- include post_list.html -%} -->
+            {%- include post_list_image_card.html -%}
         {%- endif -%}
       </li>
       {%- endfor -%}
