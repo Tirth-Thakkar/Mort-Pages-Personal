@@ -4,8 +4,15 @@ title: About Me
 permalink: /about/
 ---
 
-Tirth Thakkar APCSA student at DNHS  **[Tirth-Thakkar](https://github.com/Tirth-Thakkar)** [^1].
+Tirth Thakkar APCSA student at DNHS.
 
 
+![My Picture](https://github.com/Tirth-Thakkar/Mort-Pages-Personal/blob/main/images/AboutMe.jpg?raw=true)
 
-[^1] Github 
+|Period|Class|
+|1|APCSA - ~~JMoney~~ `Mortenson` 🤯| 
+|2|AP Environmental Science - Dyer|
+|3|Economics - Smith|
+|4|AP English Language - Dafoe|
+|5|AP Stats - Derksen|
+
