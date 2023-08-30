@@ -7,8 +7,6 @@ permalink: /about/
 Tirth Thakkar APCSA student at DNHS.
 
 
-![My Picture](https://github.com/Tirth-Thakkar/Mort-Pages-Personal/blob/main/images/AboutMe.jpg?raw=true)
-
 |Period|Class|
 |1|APCSA - ~~JMoney~~ `Mortenson` 🤯| 
 |2|AP Environmental Science - Dyer|
@@ -16,3 +14,4 @@ Tirth Thakkar APCSA student at DNHS.
 |4|AP English Language - Dafoe|
 |5|AP Stats - Derksen|
 
+![My Picture](https://github.com/Tirth-Thakkar/Mort-Pages-Personal/blob/main/images/AboutMe.jpg?raw=true)
