@@ -7,6 +7,8 @@ comments: True
 author: Tirth Thakkar
 image: images/Snek2.png
 categories: ['week0']
+type: tangibles
+courses: { compsci: {week: 0} }
 layout: base
 ---
     
