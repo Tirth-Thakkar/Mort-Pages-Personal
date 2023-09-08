@@ -89,15 +89,57 @@ body {
     #horny{
         background-image: url("https://www.freecodecamp.org/news/content/images/size/w2000/2021/06/w-qjCHPZbeXCQ-unsplash.jpg") !important ;
     }
+
+    form{
+        background: none;
+        align-items: inline;
+    }
+    .form-container {
+        display: flex; /* Make its children inline */
+        align-items: center; /* Vertically center the form elements */
+    }
+
+    /* Apply styles to the form elements */
+    #Owoification {
+        background: none;
+        background-color: white !important;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 10px;
+        font-family: cursive;
+        margin-right: 10px; /* Add some spacing between the input and button */
+    }
+
+    #owo {
+        background-image: url("https://www.freecodecamp.org/news/content/images/size/w2000/2021/06/w-qjCHPZbeXCQ-unsplash.jpg") !important;
+        border: 2px solid black;
+        color: white;
+        font-family: cursive;
+        cursor: pointer; /* Change cursor to pointer for the button */
+    }
+    input[type=text]{
+        color: black !important;
+        font-family: cursive !important;
+    }
+
 </style>
 <head>
     <meta charset="UTF-8" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js">import axios from "axios";</script>
     <title>Fetch API Image Example</title>
 </head>
 <body>
-    <h2>UWU wwelcome twoglodytes basement duwuellers</h2> <button id = "horny">New Waifu</button>
+    <h2>UWU wwelcome twoglodytes basement duwuellers</h2>
+    <button id="horny">New Waifu</button>
     <div id="image-container"></div>
+    <!-- Wrap the form elements in a container -->
+    <div class="form-container">
+        <input type="text" id="Owoification" placeholder="Owoify me daddy">
+        <input id="owo" type="submit" value="Submit">
+    </div>
+    <div id="output-container" class="rounded-box"></div>
+
     <script>
         function GetWaifu() {
             const settings = {
@@ -115,17 +157,17 @@ body {
                 .done(function (response) {
                     if (response.indexOf('<img') !== -1) {
                         // Create a temporary container element to hold the HTML response
-                        var tempContainer = document.createElement('div');
+                        let tempContainer = document.createElement('div');
                         tempContainer.innerHTML = response;
 
                         // Find the image element within the temporary container
-                        var imgElement = tempContainer.querySelector('img');
+                        let imgElement = tempContainer.querySelector('img');
 
                         if (imgElement) {
-                            var animeURL = imgElement.getAttribute('src');
-                            var image = document.createElement('img');
+                            let animeURL = imgElement.getAttribute('src');
+                            let image = document.createElement('img');
                             image.src = animeURL;
-                            var imageContainer = document.getElementById('image-container');
+                            let imageContainer = document.getElementById('image-container');
                             imageContainer.innerHTML = ''; // Clear previous images
                             imageContainer.appendChild(image);
                         } else {
@@ -138,38 +180,39 @@ body {
 
         }
 
-        function Uwuification(){
+        function Uwuification() {
+            /*
+            Replace "YOUR_ACCESS_TOKEN" with the token you got from the Kohai Bot and the endpoint.
+            */
             const url = "https://waifu.it/api/uwuify";
-            const text = "Hello world"; // Replace with your desired uwuify length (optional).
-            const accessToken = "YOUR_ACCESS_TOKEN"; // Replace with your actual access token.
-
-            const requestData = {
-                text: text || undefined,
+            const text = document.getElementById("Owoification").value; // Replace with your desired uwuify length (optional).
+            const data = async () => {
+            try {
+                const { data } = await axios.get(url, { 
+                headers: {
+                    Authorization: "YOUR_ACCESS_TOKEN",
+                    },
+                params: {
+                    text: text || undefined,
+                }
+            });
+                return data;
+            } catch (err) {
+                throw new Error(err.message);
+            }
             };
 
-        $.ajax({
-            url: url,
-            method: "GET",
-        headers: {
-            Authorization: accessToken,
-        },
-        data: requestData,
-        success: function (data) {
             console.log(data);
-        },
-        error: function (xhr, status, error) {
-            console.error(error);
-        },
-    });
+    }
 
-        }
 
-        var button = document.getElementById('horny');
+        let button = document.getElementById('horny');
+        let owo = document.getElementById('owo');
         // Attach the click event listener to the button
         // Calling GetWaifu() every 10 seconds automatically 
         GetWaifu();
         setInterval(GetWaifu, 15000);
-
+        owo.addEventListener('click', Uwuification);
         button.addEventListener('click', GetWaifu);
     </script>
 </body>
