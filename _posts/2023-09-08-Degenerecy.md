@@ -181,29 +181,29 @@ body {
         }
 
         function Uwuification() {
-            /*
-            Replace "YOUR_ACCESS_TOKEN" with the token you got from the Kohai Bot and the endpoint.
-            */
-            const url = "https://waifu.it/api/uwuify";
-            const text = document.getElementById("Owoification").value; // Replace with your desired uwuify length (optional).
-            const data = async () => {
-            try {
-                const { data } = await axios.get(url, { 
+            const url = "https://waifu.it/api/owoify";
+            const text = document.getElementById("Owoification").value;
+            const outputContainer = document.getElementById("output-container");
+
+        axios
+            .get(url, {
                 headers: {
-                    Authorization: "YOUR_ACCESS_TOKEN",
-                    },
+                    Authorization: "NjM4NDQ4NzMyNjA1Nzc1ODky.MTY5NDE1MDU5OA--.64621169e9",
+                },
                 params: {
                     text: text || undefined,
-                }
+                },
+            })
+            .then((response) => {
+                const formattedJson = JSON.stringify(response.data, null, 2); // Format JSON with 2 spaces indentation
+                outputContainer.textContent = formattedJson; // Display the formatted JSON in the output container
+            })
+            .catch((error) => {
+                console.error(error);
+                outputContainer.textContent = "Error: " + error.message; // Display an error message if the request fails
             });
-                return data;
-            } catch (err) {
-                throw new Error(err.message);
-            }
-            };
+}
 
-            console.log(data);
-    }
 
 
         let button = document.getElementById('horny');
