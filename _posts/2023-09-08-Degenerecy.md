@@ -106,6 +106,20 @@ body {
         border: 2px solid black;
         border-radius: 10px;
         padding: 10px;
+        margin: 10px;
+        font-family: cursive;
+        margin-right: 10px; /* Add some spacing between the input and button */
+    }
+
+    #output-container{
+        background: none;
+        background-color: #323443 !important;
+        border: 2px solid white;
+        color: white;
+        margin: 10px;
+        border-radius: 10px;
+        min-width: 40px;
+        padding: 10px;
         font-family: cursive;
         margin-right: 10px; /* Add some spacing between the input and button */
     }
@@ -138,7 +152,7 @@ body {
         <input type="text" id="Owoification" placeholder="Owoify me daddy">
         <input id="owo" type="submit" value="Submit">
     </div>
-    <div id="output-container" class="rounded-box"></div>
+    <div id="output-container" class="rounded-box">Output will be here.</div>
 
     <script>
         function GetWaifu() {
@@ -195,8 +209,8 @@ body {
                 },
             })
             .then((response) => {
-                const formattedJson = JSON.stringify(response.data, null, 2); // Format JSON with 2 spaces indentation
-                outputContainer.textContent = formattedJson; // Display the formatted JSON in the output container
+                const textValue = response.data.text; // Extract the "text" property
+                outputContainer.textContent = textValue;
             })
             .catch((error) => {
                 console.error(error);
