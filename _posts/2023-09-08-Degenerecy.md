@@ -111,7 +111,7 @@ body {
         margin-right: 10px; /* Add some spacing between the input and button */
     }
 
-    #output-container{
+    #output-container, #ye{
         background: none;
         background-color: #323443 !important;
         border: 2px solid white;
@@ -153,7 +153,8 @@ body {
         <input id="owo" type="submit" value="Submit">
     </div>
     <div id="output-container" class="rounded-box">Output will be here.</div>
-
+    <h2>KANYE REST</h2>
+    <h3 id="ye"></h3>
     <script>
         function GetWaifu() {
             const settings = {
@@ -216,7 +217,20 @@ body {
                 console.error(error);
                 outputContainer.textContent = "Error: " + error.message; // Display an error message if the request fails
             });
-}
+        }
+
+            function getQuote(){
+                $(document).ready(function(){
+                    const grab = $.get("https://api.kanye.rest", function(result){
+                        const quote = result.quote;
+                        document.getElementById("ye").innerHTML=quote;
+                        var msg = new SpeechSynthesisUtterance();
+                        msg.text=quote;
+                        msg.rate = 1.75;
+                        window.speechSynthesis.speak(msg);
+                    });
+                    });
+                }
 
 
 
@@ -228,6 +242,8 @@ body {
         setInterval(GetWaifu, 15000);
         owo.addEventListener('click', Uwuification);
         button.addEventListener('click', GetWaifu);
+        getQuote();
+        setInterval(getQuote, 10000);
     </script>
 </body>
 
