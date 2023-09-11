@@ -6,7 +6,7 @@ author: Tirth Thakkar, Haseeb Beg (Degenerate Code Monkey)
 title: Javascript!!
 description: Javascript Checkout
 type: tangibles
-courses: { compsci: {week: 2} }
+courses: { compsci: {week: 3} }
 ---
 <style>
 body {
@@ -144,7 +144,7 @@ body {
     <title>Fetch API Image Example</title>
 </head>
 <body>
-    <h2>UWU wwelcome twoglodytes basement duwuellers</h2>
+    <h2>UWU wwelcome twoglodytes bawaesment duwuewers</h2>
     <button id="horny">New Waifu</button>
     <div id="image-container"></div>
     <!-- Wrap the form elements in a container -->
