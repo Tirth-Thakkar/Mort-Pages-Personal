@@ -1,0 +1,55 @@
+<mxfile host="65bd71144e">
+    <diagram id="W7mF5lWiXVY4tKixshCW" name="Page-1">
+        <mxGraphModel dx="759" dy="614" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Choclate Chip Cookie" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="260" y="250" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Oatmeal Cookei" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="525" y="250" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="8" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="8" target="3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Cookie&lt;/font&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="110" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="" style="endArrow=classic;html=1;fontSize=12;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="299.5" y="330" as="sourcePoint"/>
+                        <mxPoint x="300" y="420" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="Instance&lt;br&gt;" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;fontSize=12;" parent="11" connectable="0" vertex="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="endArrow=classic;html=1;fontSize=12;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="564.6700000000001" y="330" as="sourcePoint"/>
+                        <mxPoint x="565.1700000000001" y="420" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="Instance" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;fontSize=12;" parent="13" connectable="0" vertex="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;myChoclateChipCookie&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="235" y="420" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;myOatmealCookie&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="505" y="420" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Subclasses&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="410" y="275" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;Parent&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="410" y="76" width="60" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
