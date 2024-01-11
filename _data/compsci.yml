@@ -14,5 +14,38 @@ Unit3:
   description: Learn (React|Django|Spring).  Continue Agile development process.
   start: 8
   end: 12
+Unit4:
+  title: Warm-up Data Analysis and Sort Project
+  description: Trimester 2 will begin with a Mini-project on Sorting and Analysis. Focusing on frontend JavaScript Visualization; Backend Java Sorting, Inheritance, and Polymorphic behavior.
+  start: 13
+  end: 16
+Unit5:
+  title: Creative Development Ideas and Concepts
+  description: This will be the most creative portion of the year for CSA students. The objective of these weeks is to explore, create ideas, and code concepts that have the growth potential to enable a two-trimester project. Consider frontend design, draw.io database modeling, API plans, JWT designs, big data solutions, and future usefulness. The ideas and code that are most liked by Teachers and Students will be continued and used for N@tM projects. Students should be able to talk about design, do fe/be coding, add data and data structure, add database features, and perform weekly live reviews.
+  start: 17
+  end: 19
+# Unit6:
+#   title: Passion Project v1.0 and N@tM Demo
+#   description: Each person within "Student Teams" will have their own specialty within their student project that shows Full Stack competency, with a specific focus on Java as backend. Intentions for this period are to have the freedom of a creative project, driven by your individual Issues and team Scrum Board.
+#   start: 20
+#   end: 24
+# Unit7: 
+#   title: Data Structures
+#   description: A focus on Data Structures that relate to the AP exam. A key requirement is to make your own Algorithmic sorting video. The theme is to produce work that can help you pass the AP Exam and improve your Passion Project. Each student must cover key concepts from the Four AP FRQ types, contain a key Data Structure, and utilize Sorting.
+#   illustration: *data_structures
+#   start: 25
+#   end: 29
+# Unit8:
+#   title: AP Weeks
+#   description: Students will lead several study sessions (20-minute test, followed by review) the week before the exam. In any break in study, students will transition activities back to their final project.
+#   illustration: *frq_types
+#   start: 30
+#   end: 32
+# Unit9:
+#   title: Passion Project v2.0 and N@tM
+#   description: Wrap up your preferred project and data structures. There will be an opportunity to contribute and be published to the NightHawk Coding Society. If your project is selected, then you will receive a high 'A' on the final project.
+#   start: 33
+#   end: 36
+ 
  
 
