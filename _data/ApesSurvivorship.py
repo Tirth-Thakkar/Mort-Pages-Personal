@@ -1,4 +1,35 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+
+def prepare_data(csv_file):
+    df = pd.read_csv(csv_file)
+
+    if 'Type' not in df.columns:
+        raise ValueError("Column 'Type' not found in the CSV file")
+    
+    # Split the 'Type' column into separate rows
+    df_expanded = df.assign(Type=df['Type'].str.split(',')).explode('Type')
+
+    # Strip any extra whitespace from the 'Type' entries
+    df_expanded['Type'] = df_expanded['Type'].str.strip()
+    
+    # Get the current directory
+    current_dir = os.getcwd()
+
+    # Construct the path to the CSV_Output directory
+    output_dir = os.path.join(current_dir, "_data", "CSV_Data")
+
+    # Grouping the Data by the Type (Species, Breed, Gender, etc.)
+    for type_name, group, in df_expanded.groupby('Type'):
+        # Construct the path to the output file
+        output_file = os.path.join(output_dir, f"{type_name}.csv")
+        
+        # Save the grouped data to a new CSV file
+        group.to_csv(output_file, index=False)
+        
+        print(f"Data saved to {output_file}")
 
 def analyze_deaths(csv_file, stats_csv_file):
     # Function to calculate age range for a given age
@@ -7,6 +38,10 @@ def analyze_deaths(csv_file, stats_csv_file):
 
     # Load the CSV file into a DataFrame
     df = pd.read_csv(csv_file)
+
+    # Making sure that the Data 
+    if 'Age of Death' not in df.columns:
+        raise ValueError("Column 'Age of Death' not found in the CSV file")
 
     # Create a new column 'Age Range' to store the age range for each person
     df['Age Range'] = df['Age of Death'].apply(calculate_age_range)
@@ -61,8 +96,35 @@ def analyze_deaths(csv_file, stats_csv_file):
     print(f"Statistics saved to {stats_csv_file}")
 
 if __name__ == '__main__':
-    # Run Program here Path will change per system
-    analyze_deaths('/home/tirth/vscode/Mort-Pages-Personal/_data/CSV_Data/19th_Cent_NJ_Burials_Women.csv', '/home/tirth/vscode/Mort-Pages-Personal/_data/CSV_Output/age_range_statistics_women_19th_cent.csv')
-    analyze_deaths('/home/tirth/vscode/Mort-Pages-Personal/_data/CSV_Data/19th_Cent_NJ_Burials_Men.csv', '/home/tirth/vscode/Mort-Pages-Personal/_data/CSV_Output/age_range_statistics_men_19th_cent.csv')
-    analyze_deaths('/home/tirth/vscode/Mort-Pages-Personal/_data/CSV_Data/20th_Cent_SD_Burials_Men.csv', '/home/tirth/vscode/Mort-Pages-Personal/_data/CSV_Output/age_range_statistics_men_20th_cent.csv')
-    analyze_deaths('/home/tirth/vscode/Mort-Pages-Personal/_data/CSV_Data/20th_Cent_SD_Burials_Women.csv', '/home/tirth/vscode/Mort-Pages-Personal/_data/CSV_Output/age_range_statistics_women_th_cent.csv')
+    # Get the current directory
+    current_dir = os.getcwd()
+    
+    # Construct the path to the CSV_Data directory
+    data_dir = os.path.join(current_dir, "_data", "CSV_Data")
+    
+    # Construct the path to the CSV_Output directory
+    output_dir = os.path.join(current_dir, "_data", "CSV_Output")
+    
+    # Define the file names
+    women_19th_cent_file = os.path.join(data_dir, "19th_Cent_NJ_Burials_Women.csv")
+    men_19th_cent_file = os.path.join(data_dir, "19th_Cent_NJ_Burials_Men.csv")
+    men_20th_cent_file = os.path.join(data_dir, "20th_Cent_SD_Burials_Men.csv")
+    women_20th_cent_file = os.path.join(data_dir, "20th_Cent_SD_Burials_Women.csv")
+    
+    # Define the output file names
+    women_19th_cent_stats_file = os.path.join(output_dir, "age_range_statistics_women_19th_cent.csv")
+    men_19th_cent_stats_file = os.path.join(output_dir, "age_range_statistics_men_19th_cent.csv")
+    men_20th_cent_stats_file = os.path.join(output_dir, "age_range_statistics_men_20th_cent.csv")
+    women_20th_cent_stats_file = os.path.join(output_dir, "age_range_statistics_women_20th_cent.csv")
+    
+    # Run the analyze_deaths function for each file
+    analyze_deaths(women_19th_cent_file, women_19th_cent_stats_file)
+    analyze_deaths(men_19th_cent_file, men_19th_cent_stats_file)
+    analyze_deaths(men_20th_cent_file, men_20th_cent_stats_file)
+    analyze_deaths(women_20th_cent_file, women_20th_cent_stats_file)
+
+    dog_life_expectancy = os.path.join(data_dir, "DogLifeExpectancy.csv")
+
+    prepare_data(dog_life_expectancy)
+
+    
