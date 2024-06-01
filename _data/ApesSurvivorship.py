@@ -19,7 +19,7 @@ def prepare_data(csv_file):
     current_dir = os.getcwd()
 
     # Construct the path to the CSV_Output directory
-    output_dir = os.path.join(current_dir, "_data", "CSV_Data")
+    output_dir = os.path.join(current_dir, "_data", "CSV_Data", "CSV_Data_Processed")
 
     # Grouping the Data by the Type (Species, Breed, Gender, etc.)
     for type_name, group, in df_expanded.groupby('Type'):
@@ -106,26 +106,29 @@ if __name__ == '__main__':
     # Construct the path to the CSV_Output directory
     output_dir = os.path.join(current_dir, "_data", "CSV_Output")
     
-    # Define the file names
-    women_19th_cent_file = os.path.join(data_dir, "19th_Cent_NJ_Burials_Women.csv")
-    men_19th_cent_file = os.path.join(data_dir, "19th_Cent_NJ_Burials_Men.csv")
-    men_20th_cent_file = os.path.join(data_dir, "20th_Cent_SD_Burials_Men.csv")
-    women_20th_cent_file = os.path.join(data_dir, "20th_Cent_SD_Burials_Women.csv")
+    # # Define the file names
+    # women_19th_cent_file = os.path.join(data_dir, "19th_Cent_NJ_Burials_Women.csv")
+    # men_19th_cent_file = os.path.join(data_dir, "19th_Cent_NJ_Burials_Men.csv")
+    # men_20th_cent_file = os.path.join(data_dir, "20th_Cent_SD_Burials_Men.csv")
+    # women_20th_cent_file = os.path.join(data_dir, "20th_Cent_SD_Burials_Women.csv")
     
-    # Define the output file names
-    women_19th_cent_stats_file = os.path.join(output_dir, "age_range_statistics_women_19th_cent.csv")
-    men_19th_cent_stats_file = os.path.join(output_dir, "age_range_statistics_men_19th_cent.csv")
-    men_20th_cent_stats_file = os.path.join(output_dir, "age_range_statistics_men_20th_cent.csv")
-    women_20th_cent_stats_file = os.path.join(output_dir, "age_range_statistics_women_20th_cent.csv")
+    # # Define the output file names
+    # women_19th_cent_stats_file = os.path.join(output_dir, "age_range_statistics_women_19th_cent.csv")
+    # men_19th_cent_stats_file = os.path.join(output_dir, "age_range_statistics_men_19th_cent.csv")
+    # men_20th_cent_stats_file = os.path.join(output_dir, "age_range_statistics_men_20th_cent.csv")
+    # women_20th_cent_stats_file = os.path.join(output_dir, "age_range_statistics_women_20th_cent.csv")
     
-    # Run the analyze_deaths function for each file
-    analyze_deaths(women_19th_cent_file, women_19th_cent_stats_file)
-    analyze_deaths(men_19th_cent_file, men_19th_cent_stats_file)
-    analyze_deaths(men_20th_cent_file, men_20th_cent_stats_file)
-    analyze_deaths(women_20th_cent_file, women_20th_cent_stats_file)
+    # # Run the analyze_deaths function for each file
+    # analyze_deaths(women_19th_cent_file, women_19th_cent_stats_file)
+    # analyze_deaths(men_19th_cent_file, men_19th_cent_stats_file)
+    # analyze_deaths(men_20th_cent_file, men_20th_cent_stats_file)
+    # analyze_deaths(women_20th_cent_file, women_20th_cent_stats_file)
 
-    dog_life_expectancy = os.path.join(data_dir, "DogLifeExpectancy.csv")
+    dog_life_expectancy = os.path.join(data_dir, "dog_life_expectancy.csv")
+    acturial_data_19thC = os.path.join(data_dir, "actuarial_Data_19th_cent_NJ_burials.csv")
+    acturial_data_20thC = os.path.join(data_dir, "actuarial_Data_20th_cent_SD_burials.csv")
 
     prepare_data(dog_life_expectancy)
-
+    prepare_data(acturial_data_19thC)
+    prepare_data(acturial_data_20thC)
     
