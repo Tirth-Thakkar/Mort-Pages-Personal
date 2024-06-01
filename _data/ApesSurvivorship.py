@@ -24,7 +24,8 @@ def prepare_data(csv_file):
     # Grouping the Data by the Type (Species, Breed, Gender, etc.)
     for type_name, group, in df_expanded.groupby('Type'):
         # Construct the path to the output file
-        output_file = os.path.join(output_dir, f"{type_name}.csv")
+        sanitized_type_name = type_name.replace('/', '_').replace('\\', '_')
+        output_file = os.path.join(output_dir, f"{sanitized_type_name}.csv")
         
         # Save the grouped data to a new CSV file
         group.to_csv(output_file, index=False)
