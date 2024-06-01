@@ -5,6 +5,9 @@ import os
 
 def prepare_data(csv_file):
     df = pd.read_csv(csv_file)
+    
+    # Getting base file name without the extension to construct output csv to account for multiple types across files with same name 
+    file_base_name = os.path.splitext(os.path.basename(csv_file))[0]
 
     if 'Type' not in df.columns:
         raise ValueError("Column 'Type' not found in the CSV file")
@@ -25,7 +28,7 @@ def prepare_data(csv_file):
     for type_name, group, in df_expanded.groupby('Type'):
         # Construct the path to the output file
         sanitized_type_name = type_name.replace('/', '_').replace('\\', '_')
-        output_file = os.path.join(output_dir, f"{sanitized_type_name}.csv")
+        output_file = os.path.join(output_dir, f"{file_base_name}{sanitized_type_name}.csv")
         
         # Save the grouped data to a new CSV file
         group.to_csv(output_file, index=False)
@@ -126,7 +129,7 @@ if __name__ == '__main__':
 
     dog_life_expectancy = os.path.join(data_dir, "dog_life_expectancy.csv")
     acturial_data_19thC = os.path.join(data_dir, "actuarial_Data_19th_cent_NJ_burials.csv")
-    acturial_data_20thC = os.path.join(data_dir, "actuarial_Data_20th_cent_SD_burials.csv")
+    acturial_data_20thC = os.path.join(data_dir, "actuarial_data_20th_cent_SD_burials.csv")
 
     prepare_data(dog_life_expectancy)
     prepare_data(acturial_data_19thC)
