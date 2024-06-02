@@ -5,4 +5,4 @@ nohup.out
 Gemfile.lock
 node_modules
 _data/CSV_Data/CSV_Data_Processed
-_data/CSV_Output/CSV_Data_Processed
+_data/CSV_Output/CSV_Output_Processed

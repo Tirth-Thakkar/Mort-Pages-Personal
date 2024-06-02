@@ -122,6 +122,16 @@ def perform_analysis(csv_file, age_range, separate_types):
         analyze_deaths(csv_file, output_file, age_range)
         output_file_arr.append(output_file)
 
+def plotCurve():
+    raise NotImplementedError
+    # Wether the survivor ship curve is Type 1, Type 2, or Type 3
+    def determinePlotType():
+        raise NotImplementedError
+
+    # Raising wether a species is k-selected (logistic growth) or r-selected (exponential growth)
+    def determineSpeciesGrowthType():
+        raise NotImplementedError
+
 
 if __name__ == '__main__':
     # Get the current directory
@@ -134,12 +144,17 @@ if __name__ == '__main__':
     output_dir = os.path.join(current_dir, "_data", "CSV_Output")
 
     # dog_life_expectancy = os.path.join(data_dir, "dog_life_expectancy.csv")
-    acturial_data_19thC = os.path.join(data_dir, "actuarial_Data_19th_cent_NJ_burials.csv")
-    acturial_data_20thC = os.path.join(data_dir, "actuarial_data_20th_cent_SD_burials.csv")
+    actuarial_data_19thC = os.path.join(data_dir, "actuarial_Data_19th_cent_NJ_burials.csv")
+    actuarial_data_20thC = os.path.join(data_dir, "actuarial_data_20th_cent_SD_burials.csv")
+
+    actuarial_data_dogs= os.path.join(data_dir, "dog_life_expectancy.csv")
 
     # prepare_data(dog_life_expectancy) 
-    perform_analysis(csv_file = acturial_data_19thC, age_range = 5, separate_types = True)
-    perform_analysis(acturial_data_20thC, 5)
+    # perform_analysis(csv_file = actuarial_data_19thC, age_range = 5, separate_types = True)
+    # perform_analysis(csv_file = actuarial_data_20thC, age_range = 5, separate_types = False)
+    
+    # Recommended to not separate_types for dogs due to many different breeds in the dataset creating too many files 
+    perform_analysis(csv_file= actuarial_data_dogs, age_range= 1,separate_types = False)
     
 
 
