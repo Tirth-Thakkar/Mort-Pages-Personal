@@ -122,9 +122,37 @@ def perform_analysis(csv_file, age_range, separate_types):
         analyze_deaths(csv_file, output_file, age_range)
         output_file_arr.append(output_file)
 
-def plotCurve():
-    raise NotImplementedError
+    return output_file_arr
+
+def plot_curve(csv_file, title):
+    df = pd.read_csv(csv_file)
+
+    current_dir = os.getcwd()
+    output_dir = os.path.join(current_dir, "_data", "CSV_Output", "CSV_Output_Processed")
+    
+    
+    # Getting the file name of the CSV File Passed in 
+    file_base_name = os.path.splitext(os.path.basename(csv_file))[0]
+    output_path = os.path.join(output_dir, f"{file_base_name}_Survivorship_Curve.png")
+    
+    if "Age Range" not in df.columns:
+        raise ValueError("Column 'Age Range' not found in the CSV file")
+    
+    age_range = df['Age Range']
+    surviving_members = df['Surviving Members']
+    plt.figure()
+    plt.rcParams["figure.autolayout"] = True
+    plt.xlabel('Age Range')
+    plt.ylabel('Surviving Members')
+    plt.title(f'Survivorship Curve {title}')
+    plt.plot(age_range, surviving_members, marker='.')
+    # If You Want to Show the Plot  
+    # plt.show()
+    plt.savefig(output_path)  
+    plt.close()
+
     # Wether the survivor ship curve is Type 1, Type 2, or Type 3
+    # Different Types of Survivorship Curves and their meaning     
     def determinePlotType():
         raise NotImplementedError
 
@@ -144,18 +172,28 @@ if __name__ == '__main__':
     output_dir = os.path.join(current_dir, "_data", "CSV_Output")
 
     # dog_life_expectancy = os.path.join(data_dir, "dog_life_expectancy.csv")
-    actuarial_data_19thC = os.path.join(data_dir, "actuarial_Data_19th_cent_NJ_burials.csv")
+    actuarial_data_19thC = os.path.join(data_dir, "actuarial_data_19th_cent_NJ_burials.csv")
     actuarial_data_20thC = os.path.join(data_dir, "actuarial_data_20th_cent_SD_burials.csv")
 
+    # Data Source for Dog Data https://rvc-repository.worktribe.com/output/1558210 
     actuarial_data_dogs= os.path.join(data_dir, "dog_life_expectancy.csv")
 
     # prepare_data(dog_life_expectancy) 
-    # perform_analysis(csv_file = actuarial_data_19thC, age_range = 5, separate_types = True)
-    # perform_analysis(csv_file = actuarial_data_20thC, age_range = 5, separate_types = False)
+    cent_19th_output_arr = perform_analysis(csv_file = actuarial_data_19thC, age_range = 5, separate_types = True)
+    cent_20th_output_arr = perform_analysis(csv_file = actuarial_data_20thC, age_range = 5, separate_types = True)
     
+
     # Recommended to not separate_types for dogs due to many different breeds in the dataset creating too many files 
-    perform_analysis(csv_file= actuarial_data_dogs, age_range= 1,separate_types = False)
+    # Unless you like 200+ files in your directory =)
+    dog_path_output_arr = perform_analysis(csv_file = actuarial_data_dogs, age_range = 1, separate_types = False)
+
+    for path in dog_path_output_arr:
+        plot_curve(path, "Dog Life Expectancy")
+
+    for path in cent_19th_output_arr:
+        plot_curve(path, "19th Century Actuarial Data")
+
+    for path in cent_20th_output_arr:
+        plot_curve(path, "20th Century Actuarial Data")
     
-
-
     
