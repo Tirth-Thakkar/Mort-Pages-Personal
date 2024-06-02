@@ -21,24 +21,27 @@ def prepare_data(csv_file):
     # Get the current directory
     current_dir = os.getcwd()
 
-    # Construct the path to the CSV_Output directory
+    # Construct the path to the CSV_Data_Processed directory
     output_dir = os.path.join(current_dir, "_data", "CSV_Data", "CSV_Data_Processed")
 
+    path_output_array = []
     # Grouping the Data by the Type (Species, Breed, Gender, etc.)
     for type_name, group, in df_expanded.groupby('Type'):
         # Construct the path to the output file
         sanitized_type_name = type_name.replace('/', '_').replace('\\', '_')
-        output_file = os.path.join(output_dir, f"{file_base_name}{sanitized_type_name}.csv")
-        
+        output_file = os.path.join(output_dir, f"{file_base_name}_{sanitized_type_name}.csv")
+        path_output_array.append(output_file)
         # Save the grouped data to a new CSV file
         group.to_csv(output_file, index=False)
         
         print(f"Data saved to {output_file}")
+    return path_output_array
 
-def analyze_deaths(csv_file, stats_csv_file):
-    # Function to calculate age range for a given age
-    def calculate_age_range(age):
-        return int(age // 5) * 5
+
+def analyze_deaths(csv_file, stats_csv_file, age_band):
+    # Function to calculate age range for a given age range of 5 years (e.g., 0-4, 5-9, etc.)
+    def calculate_age_range(age, age_band):
+        return int(age // age_band) * age_band
 
     # Load the CSV file into a DataFrame
     df = pd.read_csv(csv_file)
@@ -48,7 +51,7 @@ def analyze_deaths(csv_file, stats_csv_file):
         raise ValueError("Column 'Age of Death' not found in the CSV file")
 
     # Create a new column 'Age Range' to store the age range for each person
-    df['Age Range'] = df['Age of Death'].apply(calculate_age_range)
+    df['Age Range'] = df['Age of Death'].apply(calculate_age_range, args=(age_band,))
 
     # Initialize variables to store statistics
     age_range_stats = {}
@@ -83,7 +86,7 @@ def analyze_deaths(csv_file, stats_csv_file):
 
     # Print the statistics
     for age_range, stats in age_range_stats.items():
-        print(f"Age Range {age_range}-{age_range + 4.9} years:")
+        print(f"Age Range {age_range}-{age_range + age_band-0.1} years:")
         print(f"  Number of Deaths: {stats['Deaths in Range']}")
         print(f"  Surviving Members: {stats['Surviving Members']}")
         print(f"  Mortality Rate: {stats['Mortality Rate']:.2%}")
@@ -99,6 +102,27 @@ def analyze_deaths(csv_file, stats_csv_file):
 
     print(f"Statistics saved to {stats_csv_file}")
 
+def perform_analysis(csv_file, age_range, separate_types):
+    # Get the current directory
+    current_dir = os.getcwd()
+    output_dir = os.path.join(current_dir, "_data", "CSV_Output", "CSV_Output_Processed")
+    output_file_arr = []
+    if separate_types:
+        data = prepare_data(csv_file)
+        for path in data:
+            # Get the base file name without extension
+            path_base_name = os.path.splitext(os.path.basename(path))[0]
+            output_file = os.path.join(output_dir, f"{path_base_name}_statistics.csv")
+            # Construct the path to the CSV_Data_Processed directory
+            analyze_deaths(path, output_file, age_range)
+            output_file_arr.append(output_file)
+    else: 
+        path_base_name = os.path.splitext(os.path.basename(csv_file))[0]
+        output_file = os.path.join(output_dir, f"{path_base_name}_statistics.csv")
+        analyze_deaths(csv_file, output_file, age_range)
+        output_file_arr.append(output_file)
+
+
 if __name__ == '__main__':
     # Get the current directory
     current_dir = os.getcwd()
@@ -108,30 +132,15 @@ if __name__ == '__main__':
     
     # Construct the path to the CSV_Output directory
     output_dir = os.path.join(current_dir, "_data", "CSV_Output")
-    
-    # # Define the file names
-    # women_19th_cent_file = os.path.join(data_dir, "19th_Cent_NJ_Burials_Women.csv")
-    # men_19th_cent_file = os.path.join(data_dir, "19th_Cent_NJ_Burials_Men.csv")
-    # men_20th_cent_file = os.path.join(data_dir, "20th_Cent_SD_Burials_Men.csv")
-    # women_20th_cent_file = os.path.join(data_dir, "20th_Cent_SD_Burials_Women.csv")
-    
-    # # Define the output file names
-    # women_19th_cent_stats_file = os.path.join(output_dir, "age_range_statistics_women_19th_cent.csv")
-    # men_19th_cent_stats_file = os.path.join(output_dir, "age_range_statistics_men_19th_cent.csv")
-    # men_20th_cent_stats_file = os.path.join(output_dir, "age_range_statistics_men_20th_cent.csv")
-    # women_20th_cent_stats_file = os.path.join(output_dir, "age_range_statistics_women_20th_cent.csv")
-    
-    # # Run the analyze_deaths function for each file
-    # analyze_deaths(women_19th_cent_file, women_19th_cent_stats_file)
-    # analyze_deaths(men_19th_cent_file, men_19th_cent_stats_file)
-    # analyze_deaths(men_20th_cent_file, men_20th_cent_stats_file)
-    # analyze_deaths(women_20th_cent_file, women_20th_cent_stats_file)
 
-    dog_life_expectancy = os.path.join(data_dir, "dog_life_expectancy.csv")
+    # dog_life_expectancy = os.path.join(data_dir, "dog_life_expectancy.csv")
     acturial_data_19thC = os.path.join(data_dir, "actuarial_Data_19th_cent_NJ_burials.csv")
     acturial_data_20thC = os.path.join(data_dir, "actuarial_data_20th_cent_SD_burials.csv")
 
-    prepare_data(dog_life_expectancy)
-    prepare_data(acturial_data_19thC)
-    prepare_data(acturial_data_20thC)
+    # prepare_data(dog_life_expectancy) 
+    perform_analysis(csv_file = acturial_data_19thC, age_range = 5, separate_types = True)
+    perform_analysis(acturial_data_20thC, 5)
+    
+
+
     
