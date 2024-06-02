@@ -171,7 +171,6 @@ if __name__ == '__main__':
     # Construct the path to the CSV_Output directory
     output_dir = os.path.join(current_dir, "_data", "CSV_Output")
 
-    # dog_life_expectancy = os.path.join(data_dir, "dog_life_expectancy.csv")
     actuarial_data_19thC = os.path.join(data_dir, "actuarial_data_19th_cent_NJ_burials.csv")
     actuarial_data_20thC = os.path.join(data_dir, "actuarial_data_20th_cent_SD_burials.csv")
 
@@ -195,5 +194,4 @@ if __name__ == '__main__':
 
     for path in cent_20th_output_arr:
         plot_curve(path, "20th Century Actuarial Data")
-    
     
