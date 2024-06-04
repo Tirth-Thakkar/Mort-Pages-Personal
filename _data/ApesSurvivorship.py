@@ -160,6 +160,7 @@ def plot_curve(csv_file, title):
     # plt.show()
     
     plt.savefig(output_path)  
+    print(f"Survivorship Curve saved to {output_path}")
     plt.close()
 
 
@@ -195,10 +196,11 @@ def survival_analysis(csv_file):
 
     # If You Want to Show the Plot
     # plt.show()
-    
+    plt.title('Kaplan-Meier Survival Function')
     plt.xlabel('Age Range')
     plt.ylabel('Survivorship Probability') 
     plt.savefig(output_path)
+    print(f"Kaplan-Meier Survival Function saved to {output_path}")
 
 
 if __name__ == '__main__':
