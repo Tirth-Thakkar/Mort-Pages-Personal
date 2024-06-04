@@ -87,13 +87,13 @@ def analyze_deaths(csv_file, stats_csv_file, age_band):
             'Mortality Rate': mortality_rate
         }
 
-    # Print the statistics
-    for age_range, stats in age_range_stats.items():
-        print(f"Age Range {age_range}-{age_range + age_band-0.1} years:")
-        print(f"  Number of Deaths: {stats['Deaths in Range']}")
-        print(f"  Surviving Members: {stats['Surviving Members']}")
-        print(f"  Mortality Rate: {stats['Mortality Rate']:.2%}")
-        print()
+    # Print the statistics (uncomment to display on the console)
+    # for age_range, stats in age_range_stats.items():
+    #     print(f"Age Range {age_range}-{age_range + age_band-0.1} years:")
+    #     print(f"  Number of Deaths: {stats['Deaths in Range']}")
+    #     print(f"  Surviving Members: {stats['Surviving Members']}")
+    #     print(f"  Mortality Rate: {stats['Mortality Rate']:.2%}")
+    #     print()
 
     # Create a DataFrame for the statistics
     stats_df = pd.DataFrame.from_dict(age_range_stats, orient='index')
@@ -192,6 +192,10 @@ def survival_analysis(csv_file):
     
     # Plotting and saving the surivival function
     kaplan_meier_estimator.survival_function_.plot()
+
+    # If You Want to Show the Plot
+    # plt.show()
+    
     plt.xlabel('Age Range')
     plt.ylabel('Survivorship Probability') 
     plt.savefig(output_path)
@@ -231,4 +235,3 @@ if __name__ == '__main__':
 
     for path in cent_20th_output_arr:
         plot_curve(path, "20th Century Actuarial Data")
-        
