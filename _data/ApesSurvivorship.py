@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
+import time
 from lifelines import KaplanMeierFitter
 from lifelines.utils import median_survival_times 
 from lifelines.statistics import logrank_test
@@ -14,7 +14,7 @@ def prepare_data(csv_file):
 
     if 'Type' not in df.columns:
         raise ValueError("Column 'Type' not found in the CSV file")
-    
+
     # Split the 'Type' column into separate rows
     df_expanded = df.assign(Type=df['Type'].str.split(',')).explode('Type')
 
@@ -167,20 +167,28 @@ def plot_curve(csv_file, title):
 
 # If we wanted to expand beyond what you would see in APES and would be more realistic towards the actual
 # world we would use the elements that are covered in the fields of Survival Analysis 
-# There may be some calculus involved to determine function types either Type 1, 2, or 3 Survivorship Curves  
-# Learn more https://en.wikipedia.org/wiki/Survivorship_curve 
 
-def survival_analysis(csv_file):
-    kaplan_meier_estimator = KaplanMeierFitter()
-    df = pd.read_csv(csv_file)
+# A method for creating the duration dataframe needed for survival analysis 
+def survival_helper(csv_file_preprocessed):
+    df = pd.read_csv(csv_file_preprocessed)
     
-    if "Surviving Members" not in df.columns:
-        raise ValueError("Column 'Surviving Members' not found in the CSV file")
+    if "Age Range" not in df.columns:
+        raise ValueError("Column 'Age Range' not found in the CSV file")
+    
+    if "Deaths in Range" not in df.columns:
+        raise ValueError("Column 'Deaths in Range' not found in the CSV file")
     
     # Creating a new DataFrame for duration or the life that each individual lived for 
     # Based on the amount of deaths in the age range adds the Age Range they died in to the DataFrame 
     duration = df['Age Range'].repeat(df['Deaths in Range'])
+    
+    return duration
 
+
+def survival_analysis(csv_file_preprocessed):
+    kaplan_meier_estimator = KaplanMeierFitter()
+    duration = survival_helper(csv_file_preprocessed)    
+    
     # Using the fit function from the Lifelines library to the fit the Kaplan Meier Estimator Model to the Dataset
     # This is similar to what you may have seen scikit-learn's fit or prediction functionality
     kaplan_meier_estimator.fit(duration)
@@ -188,7 +196,7 @@ def survival_analysis(csv_file):
     # Getting the file name of the CSV File Passed in
     current_dir = os.getcwd()
     output_dir = os.path.join(current_dir, "_data", "CSV_Output", "CSV_Output_Processed")
-    file_base_name = os.path.splitext(os.path.basename(csv_file))[0]
+    file_base_name = os.path.splitext(os.path.basename(csv_file_preprocessed))[0]
     output_path = os.path.join(output_dir, f"{file_base_name}_KMF_Survival_Function.png")
     
     # Plotting and saving the surivival function
@@ -196,14 +204,24 @@ def survival_analysis(csv_file):
 
     # If You Want to Show the Plot
     # plt.show()
-    plt.title('Kaplan-Meier Survival Function')
-    plt.xlabel('Age Range')
-    plt.ylabel('Survivorship Probability') 
+    plt.title(f"Kaplan-Meier Survival Function \n Median Survival Time: {kaplan_meier_estimator.median_survival_time_} years")
+    plt.xlabel("Age Range")
+    plt.ylabel("Survivorship Probability") 
     plt.savefig(output_path)
     print(f"Kaplan-Meier Survival Function saved to {output_path}")
 
+def logrank_comparison(csv_file_preprocessed_1, csv_file_preprocessed_2):
+    duration_df1 = survival_helper(csv_file_preprocessed_1)
+    duration_df2 = survival_helper(csv_file_preprocessed_2)
+
+    raise NotImplementedError("Logrank Test Comparison is not yet implemented")
+
+
+
 
 if __name__ == '__main__':
+    start_time = time.time()
+    
     # Get the current directory
     current_dir = os.getcwd()
     
@@ -237,3 +255,8 @@ if __name__ == '__main__':
 
     for path in cent_20th_output_arr:
         plot_curve(path, "20th Century Actuarial Data")
+    
+    # Timing the Execution of the Script
+    end_time = time.time()
+    execution_time = end_time - start_time
+    print(f"Execution time: {execution_time} seconds")
