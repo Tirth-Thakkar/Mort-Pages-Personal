@@ -1,0 +1,4 @@
+work_year,experience_level,employment_type,job_title,salary,salary_currency,salary_in_usd,employee_residence,remote_ratio,company_location,company_size
+2022,SE,FT,Lead Machine Learning Engineer,66000,EUR,69344,PT,100,PT,L
+2022,SE,FT,Lead Machine Learning Engineer,7500000,INR,95386,IN,50,IN,L
+2022,SE,FT,Lead Machine Learning Engineer,80000,EUR,84053,DE,0,DE,M

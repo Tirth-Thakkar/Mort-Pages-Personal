@@ -1,0 +1,4 @@
+work_year,experience_level,employment_type,job_title,salary,salary_currency,salary_in_usd,employee_residence,remote_ratio,company_location,company_size
+2023,MI,FT,Financial Data Analyst,130000,USD,130000,US,100,US,L
+2022,MI,FT,Financial Data Analyst,75000,USD,75000,US,0,US,M
+2022,EN,FT,Financial Data Analyst,100000,USD,100000,US,50,US,L

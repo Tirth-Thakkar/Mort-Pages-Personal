@@ -1,0 +1,5 @@
+work_year,experience_level,employment_type,job_title,salary,salary_currency,salary_in_usd,employee_residence,remote_ratio,company_location,company_size
+2023,MI,FT,Machine Learning Research Engineer,60000,GBP,72914,GB,0,GB,L
+2022,EN,FT,Machine Learning Research Engineer,63000,EUR,66192,DE,50,DE,L
+2021,EN,FT,Machine Learning Research Engineer,20000,USD,20000,FR,50,FR,M
+2021,EN,FT,Machine Learning Research Engineer,900000,INR,12171,IN,100,IN,M

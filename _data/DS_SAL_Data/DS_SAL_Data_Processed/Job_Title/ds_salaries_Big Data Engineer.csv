@@ -1,0 +1,12 @@
+work_year,experience_level,employment_type,job_title,salary,salary_currency,salary_in_usd,employee_residence,remote_ratio,company_location,company_size
+2023,MI,FT,Big Data Engineer,45000,EUR,48289,ES,100,ES,M
+2023,EN,FT,Big Data Engineer,130000,USD,130000,SE,100,SE,S
+2022,SE,FT,Big Data Engineer,210000,CAD,161311,CA,50,CA,M
+2021,MI,FT,Big Data Engineer,60000,USD,60000,ES,50,RO,M
+2020,EN,FT,Big Data Engineer,70000,USD,70000,US,100,US,L
+2020,SE,FT,Big Data Engineer,85000,GBP,109024,GB,50,GB,M
+2021,EN,FT,Big Data Engineer,1200000,INR,16228,IN,100,IN,L
+2021,MI,FT,Big Data Engineer,1672000,INR,22611,IN,0,IN,L
+2020,SE,FT,Big Data Engineer,100000,EUR,114047,PL,100,GB,S
+2021,EN,FT,Big Data Engineer,435000,INR,5882,IN,0,CH,L
+2021,MI,FT,Big Data Engineer,18000,USD,18000,MD,0,MD,S

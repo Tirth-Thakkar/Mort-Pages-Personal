@@ -1,0 +1,10 @@
+work_year,experience_level,employment_type,job_title,salary,salary_currency,salary_in_usd,employee_residence,remote_ratio,company_location,company_size
+2022,SE,FT,Lead Data Scientist,164000,EUR,172309,IE,100,IE,L
+2022,SE,FT,Lead Data Scientist,192000,USD,192000,US,100,US,L
+2022,SE,FT,Lead Data Scientist,4460000,INR,56723,IN,0,IN,L
+2022,SE,FT,Lead Data Scientist,156868,USD,156868,US,100,US,L
+2022,SE,FT,Lead Data Scientist,28500,EUR,29944,PT,50,PT,S
+2022,MI,FT,Lead Data Scientist,50000,GBP,61566,GB,50,GB,S
+2021,SE,FT,Lead Data Scientist,3000000,INR,40570,IN,50,IN,L
+2020,MI,FT,Lead Data Scientist,115000,USD,115000,AE,0,AE,L
+2020,SE,FT,Lead Data Scientist,190000,USD,190000,US,100,US,S

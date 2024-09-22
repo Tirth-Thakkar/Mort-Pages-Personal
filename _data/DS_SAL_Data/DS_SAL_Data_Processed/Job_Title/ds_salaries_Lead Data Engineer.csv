@@ -1,0 +1,7 @@
+work_year,experience_level,employment_type,job_title,salary,salary_currency,salary_in_usd,employee_residence,remote_ratio,company_location,company_size
+2022,EX,FT,Lead Data Engineer,150000,CAD,115222,CA,100,CA,S
+2021,SE,FT,Lead Data Engineer,75000,GBP,103160,GB,100,GB,S
+2021,SE,FT,Lead Data Engineer,276000,USD,276000,US,0,US,L
+2021,SE,FT,Lead Data Engineer,160000,USD,160000,PR,50,US,S
+2020,SE,FT,Lead Data Engineer,125000,USD,125000,NZ,50,NZ,S
+2020,MI,FT,Lead Data Engineer,56000,USD,56000,PT,100,US,M

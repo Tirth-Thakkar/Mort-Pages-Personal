@@ -1,0 +1,10 @@
+work_year,experience_level,employment_type,job_title,salary,salary_currency,salary_in_usd,employee_residence,remote_ratio,company_location,company_size
+2023,SE,FT,BI Analyst,160000,USD,160000,US,0,US,M
+2023,SE,FT,BI Analyst,135000,USD,135000,US,0,US,M
+2023,SE,FT,BI Analyst,125000,USD,125000,US,0,US,M
+2023,SE,FT,BI Analyst,110000,USD,110000,US,0,US,M
+2022,EN,PT,BI Analyst,12000,USD,12000,MX,100,US,L
+2022,EN,FT,BI Analyst,76000,USD,76000,US,50,US,L
+2022,MI,FT,BI Analyst,78000,USD,78000,BR,100,BR,M
+2022,MI,FT,BI Analyst,48000,USD,48000,BR,100,BR,M
+2022,SE,FT,BI Analyst,200000,USD,200000,NG,100,NG,S

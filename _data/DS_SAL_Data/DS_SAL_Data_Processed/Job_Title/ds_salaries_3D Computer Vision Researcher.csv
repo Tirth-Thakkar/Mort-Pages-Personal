@@ -1,0 +1,5 @@
+work_year,experience_level,employment_type,job_title,salary,salary_currency,salary_in_usd,employee_residence,remote_ratio,company_location,company_size
+2022,SE,FT,3D Computer Vision Researcher,10000,USD,10000,CA,50,AL,S
+2021,EN,FT,3D Computer Vision Researcher,20000,USD,20000,AS,0,AS,M
+2022,EN,FT,3D Computer Vision Researcher,50000,USD,50000,US,100,CR,S
+2021,MI,PT,3D Computer Vision Researcher,400000,INR,5409,IN,50,IN,M

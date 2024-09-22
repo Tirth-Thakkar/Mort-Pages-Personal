@@ -1,0 +1,4 @@
+work_year,experience_level,employment_type,job_title,salary,salary_currency,salary_in_usd,employee_residence,remote_ratio,company_location,company_size
+2022,SE,FT,Cloud Data Engineer,12000,EUR,12608,SK,100,SK,S
+2021,MI,FT,Cloud Data Engineer,120000,SGD,89294,SG,50,SG,L
+2021,SE,FT,Cloud Data Engineer,160000,USD,160000,BR,100,US,S

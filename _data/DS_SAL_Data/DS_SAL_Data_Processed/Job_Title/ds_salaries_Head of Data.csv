@@ -1,0 +1,11 @@
+work_year,experience_level,employment_type,job_title,salary,salary_currency,salary_in_usd,employee_residence,remote_ratio,company_location,company_size
+2023,EX,FT,Head of Data,329500,USD,329500,US,0,US,M
+2023,EX,FT,Head of Data,269600,USD,269600,US,0,US,M
+2023,SE,FT,Head of Data,70000,EUR,75116,PT,100,PT,L
+2022,EX,FT,Head of Data,205000,USD,205000,US,0,US,M
+2022,EX,FT,Head of Data,160000,USD,160000,US,0,US,M
+2021,SE,FT,Head of Data,87000,EUR,102839,SI,100,SI,L
+2022,SE,FT,Head of Data,200000,USD,200000,MY,100,US,M
+2022,MI,FT,Head of Data,30000,EUR,31520,EE,100,EE,S
+2021,EX,FT,Head of Data,230000,USD,230000,RU,50,RU,L
+2021,EX,FT,Head of Data,235000,USD,235000,US,100,US,L

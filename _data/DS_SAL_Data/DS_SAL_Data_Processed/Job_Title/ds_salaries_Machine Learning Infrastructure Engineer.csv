@@ -1,0 +1,12 @@
+work_year,experience_level,employment_type,job_title,salary,salary_currency,salary_in_usd,employee_residence,remote_ratio,company_location,company_size
+2023,MI,FT,Machine Learning Infrastructure Engineer,205920,USD,205920,US,0,US,M
+2023,MI,FT,Machine Learning Infrastructure Engineer,171600,USD,171600,US,0,US,M
+2023,SE,FT,Machine Learning Infrastructure Engineer,205920,USD,205920,US,0,US,M
+2023,SE,FT,Machine Learning Infrastructure Engineer,171600,USD,171600,US,0,US,M
+2023,SE,FT,Machine Learning Infrastructure Engineer,100000,EUR,107309,FR,100,FR,M
+2023,SE,FT,Machine Learning Infrastructure Engineer,70000,EUR,75116,FR,100,FR,M
+2022,SE,FT,Machine Learning Infrastructure Engineer,186000,USD,186000,US,100,US,M
+2022,SE,FT,Machine Learning Infrastructure Engineer,148800,USD,148800,US,100,US,M
+2022,MI,FT,Machine Learning Infrastructure Engineer,53000,EUR,55685,PT,50,PT,L
+2020,MI,FT,Machine Learning Infrastructure Engineer,44000,EUR,50180,PT,0,PT,M
+2021,SE,FT,Machine Learning Infrastructure Engineer,195000,USD,195000,US,100,US,M

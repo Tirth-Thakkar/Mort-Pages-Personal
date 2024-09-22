@@ -1,0 +1,10 @@
+work_year,experience_level,employment_type,job_title,salary,salary_currency,salary_in_usd,employee_residence,remote_ratio,company_location,company_size
+2023,EX,FT,Head of Data Science,131899,GBP,160288,GB,0,GB,M
+2023,EX,FT,Head of Data Science,104891,GBP,127467,GB,0,GB,M
+2023,EX,FT,Head of Data Science,314100,USD,314100,US,0,US,M
+2023,EX,FT,Head of Data Science,195800,USD,195800,US,0,US,M
+2023,MI,FT,Head of Data Science,5000000,INR,60795,IN,50,IN,L
+2022,EX,FT,Head of Data Science,224000,USD,224000,US,100,US,M
+2022,EX,FT,Head of Data Science,167875,USD,167875,US,100,US,M
+2021,EX,FT,Head of Data Science,85000,USD,85000,RU,0,RU,M
+2021,MI,FT,Head of Data Science,110000,USD,110000,US,0,US,S

@@ -1,0 +1,13 @@
+work_year,experience_level,employment_type,job_title,salary,salary_currency,salary_in_usd,employee_residence,remote_ratio,company_location,company_size
+2023,EN,FT,Applied Machine Learning Scientist,40000,EUR,42923,DE,50,DE,M
+2023,SE,FT,Applied Machine Learning Scientist,90000,USD,90000,US,100,US,L
+2022,SE,FT,Applied Machine Learning Scientist,150000,USD,150000,US,100,US,M
+2022,SE,FT,Applied Machine Learning Scientist,108000,USD,108000,US,0,US,L
+2022,MI,FT,Applied Machine Learning Scientist,75000,USD,75000,BO,100,US,M
+2022,MI,FT,Applied Machine Learning Scientist,173000,USD,173000,US,50,US,M
+2022,SE,FT,Applied Machine Learning Scientist,73400,EUR,77119,FR,100,GB,L
+2022,MI,FL,Applied Machine Learning Scientist,2400000,INR,30523,IN,100,IN,S
+2022,MI,FT,Applied Machine Learning Scientist,75000,USD,75000,BO,100,US,L
+2022,EN,CT,Applied Machine Learning Scientist,29000,EUR,30469,TN,100,CZ,M
+2021,MI,FT,Applied Machine Learning Scientist,38400,USD,38400,VN,100,US,M
+2021,MI,FT,Applied Machine Learning Scientist,423000,USD,423000,US,50,US,L

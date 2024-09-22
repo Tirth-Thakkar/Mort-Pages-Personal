@@ -1,0 +1,9 @@
+work_year,experience_level,employment_type,job_title,salary,salary_currency,salary_in_usd,employee_residence,remote_ratio,company_location,company_size
+2021,MI,FT,Data Science Lead,150000,USD,150000,US,100,US,M
+2023,SE,FT,Data Science Lead,247500,USD,247500,US,0,US,M
+2023,SE,FT,Data Science Lead,172200,USD,172200,US,0,US,M
+2023,MI,FT,Data Science Lead,60000,GBP,72914,GB,0,GB,M
+2023,MI,FT,Data Science Lead,50000,GBP,60761,GB,0,GB,M
+2023,SE,FT,Data Science Lead,225900,USD,225900,US,0,US,M
+2023,SE,FT,Data Science Lead,156400,USD,156400,US,0,US,M
+2022,SE,FT,Data Science Lead,165000,USD,165000,US,50,US,S

@@ -1,0 +1,12 @@
+work_year,experience_level,employment_type,job_title,salary,salary_currency,salary_in_usd,employee_residence,remote_ratio,company_location,company_size
+2023,EX,FT,Director of Data Science,353200,USD,353200,US,0,US,M
+2023,EX,FT,Director of Data Science,249300,USD,249300,US,0,US,M
+2023,SE,FT,Director of Data Science,170000,CAD,125686,CA,50,CA,M
+2022,SE,FT,Director of Data Science,55000,EUR,57786,FR,50,FR,L
+2022,EX,FT,Director of Data Science,250000,CAD,192037,CA,50,CA,L
+2021,EX,FT,Director of Data Science,250000,USD,250000,US,0,US,L
+2021,EX,FT,Director of Data Science,110000,EUR,130026,DE,50,DE,M
+2021,EX,FT,Director of Data Science,130000,EUR,153667,IT,100,PL,L
+2021,EX,FT,Director of Data Science,120000,EUR,141846,DE,0,DE,L
+2020,EX,FT,Director of Data Science,325000,USD,325000,US,100,US,L
+2021,SE,FT,Director of Data Science,168000,USD,168000,JP,0,JP,S

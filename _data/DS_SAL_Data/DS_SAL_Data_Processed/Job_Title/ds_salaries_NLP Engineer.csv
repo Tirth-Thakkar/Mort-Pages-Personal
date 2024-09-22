@@ -1,0 +1,8 @@
+work_year,experience_level,employment_type,job_title,salary,salary_currency,salary_in_usd,employee_residence,remote_ratio,company_location,company_size
+2023,SE,FT,NLP Engineer,275000,USD,275000,US,0,US,M
+2023,SE,FT,NLP Engineer,175000,USD,175000,US,0,US,M
+2023,SE,FT,NLP Engineer,235000,USD,235000,US,0,US,M
+2023,SE,FT,NLP Engineer,135000,USD,135000,US,0,US,M
+2022,MI,FT,NLP Engineer,198000,PLN,44365,PL,100,PL,S
+2022,MI,FT,NLP Engineer,120000,CZK,5132,CZ,100,CZ,M
+2022,MI,CT,NLP Engineer,60000,USD,60000,IN,100,US,S
